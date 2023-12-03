@@ -1,4 +1,3 @@
 let util = import "util.ncl" in
-{
-  hello = util.array.transpose [[2, 8, 1], [9, 3, 3]]
-}
+[{ hello = 1 }, { bar = 2 }]
+|> std.array.map (util.record.get "hello" 0)

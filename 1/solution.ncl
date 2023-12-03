@@ -1,6 +1,7 @@
-let util = import "../../util.ncl" in
+let util = import "../util.ncl" in
 let input = import "input.txt" in
-std.string.split "\n" input
+input
+|> std.string.split "\n"
 |> std.array.map
   (
     fun line =>

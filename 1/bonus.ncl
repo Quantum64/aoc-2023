@@ -1,4 +1,4 @@
-let util = import "../../util.ncl" in
+let util = import "../util.ncl" in
 let input = import "input.txt" in
 let words = {
   "one" = "1",

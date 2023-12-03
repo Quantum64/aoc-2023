@@ -71,5 +71,8 @@
             |> transpose
           )
       in transpose
+  },
+  record = {
+    get = (fun key not_found record => if std.record.has_field key record then record."%{key}" else not_found),
   }
 }
