@@ -70,7 +70,12 @@
             std.array.map (fun array => std.array.drop_first array) matrix
             |> transpose
           )
-      in transpose
+      in transpose,
+    get = fun index not_found array =>
+      if index < 0 || index >= std.array.length array then
+        not_found
+      else
+        std.array.at index array,
   },
   record = {
     get = (fun key not_found record => if std.record.has_field key record then record."%{key}" else not_found),
