@@ -9,6 +9,8 @@
   },
   "3" = {
     solution = import "3/solution.ncl",
-    bonus = import "3/bonus.ncl"
+  },
+  "4" = {
+    solution = import "4/solution.ncl",
   },
 }

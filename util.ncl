@@ -1,5 +1,10 @@
 {
+  bool = {
+    not = fun value => !value,
+  },
   string = {
+    is_empty = fun string => std.string.length string == 0,
+    is_not_empty = fun string => std.string.length string > 0,
     is_digit = fun character =>
       std.string.to_enum character
       |> match {
@@ -45,6 +50,14 @@
         (-1)
   },
   array = {
+    sum = fun array =>
+      std.array.fold_left
+        (
+          fun result next =>
+            result + next
+        )
+        0
+        array,
     chunked = fun count array =>
       std.array.fold_left
         (
